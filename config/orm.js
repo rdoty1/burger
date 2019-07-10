@@ -1,0 +1,1 @@
+var conneciton = require("../config/connection.js")
