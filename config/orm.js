@@ -43,15 +43,14 @@ var orm = {
                 throw err;
             }
             console.log(result)
-            return result
 
-            cb(result)
+            // cb(result)
         })
 
     },
 
 
-    create: function(cols, vals, cb) {
+    create: function(cb) {
         var queryString = "INSERT INTO burgers";
 
         queryString += " (";
@@ -63,13 +62,13 @@ var orm = {
 
         console.log(queryString);
 
-        connection.query(queryString, vals, function(err, result) {
+        connection.query(queryString, function(err, result) {
             if (err) {
                 throw err;
             }
 
             console.log(result)
-            cb(result)
+                // cb(result)
         });
     },
     // //insertOne burger
@@ -99,6 +98,6 @@ var orm = {
 
 
 }
-
-
+orm.all();
+orm.create()
 module.exports = orm;
